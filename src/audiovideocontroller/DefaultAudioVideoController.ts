@@ -52,6 +52,7 @@ import SetLocalDescriptionTask from '../task/SetLocalDescriptionTask';
 import SetRemoteDescriptionTask from '../task/SetRemoteDescriptionTask';
 import SubscribeAndReceiveSubscribeAckTask from '../task/SubscribeAndReceiveSubscribeAckTask';
 import TimeoutTask from '../task/TimeoutTask';
+import ValidateAttendeePresenceTask from '../task/ValidateAttendeePresenceTask';
 import DefaultTransceiverController from '../transceivercontroller/DefaultTransceiverController';
 import DefaultVideoCaptureAndEncodeParameter from '../videocaptureandencodeparameter/DefaultVideoCaptureAndEncodeParameter';
 import DefaultVideoStreamIdSet from '../videostreamidset/DefaultVideoStreamIdSet';
@@ -286,6 +287,7 @@ export default class DefaultAudioVideoController implements AudioVideoController
               new FinishGatheringICECandidatesTask(this.meetingSessionContext),
               new SubscribeAndReceiveSubscribeAckTask(this.meetingSessionContext),
               new SetRemoteDescriptionTask(this.meetingSessionContext),
+              new ValidateAttendeePresenceTask(this.meetingSessionContext),
             ]),
           ]),
           this.configuration.connectionTimeoutMs
